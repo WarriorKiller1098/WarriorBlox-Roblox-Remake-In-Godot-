@@ -1,0 +1,107 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1v07f3dx27b2"]
+
+[ext_resource type="Script" uid="uid://dghwfg2hal864" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="FontFile" uid="uid://03yi2bjw7qee" path="res://system_font.tres" id="1_ig7tw"]
+
+[sub_resource type="Gradient" id="Gradient_7dm0k"]
+colors = PackedColorArray(0, 0.211171, 0.546613, 1, 0, 0.411765, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ig7tw"]
+gradient = SubResource("Gradient_7dm0k")
+use_hdr = true
+fill_from = Vector2(1, 1)
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_7dm0k"]
+
+[sub_resource type="Gradient" id="Gradient_0xm2m"]
+offsets = PackedFloat32Array(0)
+colors = PackedColorArray(1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h2yge"]
+gradient = SubResource("Gradient_0xm2m")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1bvp3"]
+texture = SubResource("GradientTexture1D_h2yge")
+modulate_color = Color(0.948083, 0.948083, 0.948083, 1)
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xm2m")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_ig7tw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(547.438, 206.813)
+scale = Vector2(756.875, 226.375)
+texture = SubResource("PlaceholderTexture2D_7dm0k")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 1149.0
+offset_right = 922.0
+offset_bottom = 1309.0
+theme_override_fonts/font = ExtResource("1_ig7tw")
+theme_override_font_sizes/font_size = 71
+text = "Log In"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 1324.0
+offset_right = 922.0
+offset_bottom = 1482.0
+theme_override_fonts/font = ExtResource("1_ig7tw")
+theme_override_font_sizes/font_size = 71
+text = "Sign Up"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 187.0
+offset_top = 1500.0
+offset_right = 922.0
+offset_bottom = 1645.0
+theme_override_fonts/font = ExtResource("1_ig7tw")
+theme_override_font_sizes/font_size = 71
+text = "Play Now"
+
+[node name="LineEdit" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 979.0
+offset_right = 919.0
+offset_bottom = 1130.0
+theme_override_colors/font_placeholder_color = Color(0.357214, 0.357214, 0.357214, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ig7tw")
+theme_override_font_sizes/font_size = 81
+theme_override_styles/normal = SubResource("StyleBoxTexture_1bvp3")
+placeholder_text = "Password..."
+
+[node name="LineEdit2" type="LineEdit" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 809.0
+offset_right = 919.0
+offset_bottom = 956.0
+theme_override_colors/font_placeholder_color = Color(0.357214, 0.357214, 0.357214, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_ig7tw")
+theme_override_font_sizes/font_size = 81
+theme_override_styles/normal = SubResource("StyleBoxTexture_1bvp3")
+placeholder_text = "Username..."
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]

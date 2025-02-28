@@ -1,0 +1,220 @@
+[gd_scene load_steps=15 format=3 uid="uid://dno5ip68xxbw7"]
+
+[ext_resource type="PackedScene" uid="uid://dmr0fcamx7t56" path="res://addons/virtual_joystick/virtual_joystick_scene.tscn" id="1_80nbo"]
+[ext_resource type="Script" uid="uid://bg2fpgx1uo7bl" path="res://game.gd" id="1_e2o6t"]
+[ext_resource type="Script" uid="uid://04pbheh5v03f" path="res://player.gd" id="2_feb5d"]
+[ext_resource type="Texture2D" uid="uid://bkvmydfn5saxg" path="res://addons/virtual_joystick/textures/joystick_tip.png" id="4_7jktm"]
+[ext_resource type="FontFile" uid="uid://03yi2bjw7qee" path="res://system_font.tres" id="5_ryrav"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_mwb40"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_80nbo"]
+sky_material = SubResource("ProceduralSkyMaterial_mwb40")
+
+[sub_resource type="Environment" id="Environment_e2o6t"]
+background_mode = 2
+sky = SubResource("Sky_80nbo")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mwb40"]
+size = Vector3(0.27, 0.633, 0.15)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eow3j"]
+font = ExtResource("5_ryrav")
+font_size = 86
+
+[sub_resource type="Animation" id="Animation_fc0e3"]
+length = 0.001
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D4")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/1/type = "position_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D5")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0.0172747, 0.016659, 0)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CSGBox3D2")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CSGBox3D")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_feb5d"]
+resource_name = "walk"
+length = 1.5
+tracks/0/type = "rotation_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D4")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0.01, 1, 0, 0, 0, 1, 0.5, 1, 0.504, 0, 0, 0.864, 1, 1, -0.504, 0, 0, 0.864, 1.5, 1, 0, 0, 0, 1)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D5")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0.01, 1, 0, 0, 0, 1, 0.5, 1, -0.504, 0, 0, 0.864, 1, 1, 0.504, 0, 0, 0.864, 1.5, 1, 0, 0, 0, 1)
+tracks/2/type = "position_3d"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CSGBox3D4")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(0.01, 1, 0.158999, 0.016659, 0, 0.5, 1, 0.159, 0.017, -0.135, 1, 1, 0.158999, 0.016659, 0, 1.5, 1, 0.158999, 0.016659, 0)
+tracks/3/type = "position_3d"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CSGBox3D5")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(0.01, 1, 0.0172747, 0.016659, 0, 0.5, 1, 0.017, 0.017, 0.192, 1, 1, 0.017, 0.017, -0.192, 1.5, 1, 0.0172747, 0.016659, 0)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CSGBox3D2")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.5, 1, 0.415, 0, 0, 0.91, 1, 1, -0.415, 0, 0, 0.91, 1.5, 1, 0, 0, 0, 1)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("CSGBox3D")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(0.01, 1, 0, 0, 0, 1, 0.5, 1, -0.415, 0, 0, 0.91, 1, 1, 0.415, 0, 0, 0.91, 1.5, 1, 0, 0, 0, 1)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7jktm"]
+_data = {
+&"RESET": SubResource("Animation_fc0e3"),
+&"walk": SubResource("Animation_feb5d")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_80nbo"]
+
+[node name="Node3D" type="Node3D"]
+script = ExtResource("1_e2o6t")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_e2o6t")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+slide_on_ceiling = false
+floor_stop_on_slope = false
+floor_constant_speed = true
+script = ExtResource("2_feb5d")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.294472, 0.324975, 0)
+size = Vector3(0.13, 0.305, 0.155)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.158999, 0.016659, 0)
+size = Vector3(0.13, 0.305, 0.155)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0172747, 0.016659, 0)
+size = Vector3(0.13, 0.305, 0.155)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.102128, 0.324975, 0)
+size = Vector3(0.13, 0.305, 0.155)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0955999, 0.324975, 0)
+size = Vector3(0.252, 0.305, 0.155)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0947915, 0.161356, 0.00351131)
+shape = SubResource("BoxShape3D_mwb40")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0971192, 0.552866, -0.00972557)
+radius = 0.085
+height = 0.15
+sides = 64
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D"]
+transform = Transform3D(-0.994625, 0.0339705, -0.0978164, -0.00190023, 0.938507, 0.345254, 0.10353, 0.343584, -0.933398, -0.0250592, 0.674755, -1.0404)
+
+[node name="Virtual Joystick" parent="CharacterBody3D/Camera3D" instance=ExtResource("1_80nbo")]
+offset_left = 5.0
+offset_top = -485.0
+offset_right = 305.0
+offset_bottom = -185.0
+scale = Vector2(1.62381, 1.58321)
+action_left = "ui_right"
+action_right = "ui_left"
+action_up = "ui_down"
+action_down = "ui_up"
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="CharacterBody3D/Camera3D"]
+position = Vector2(1642, 524)
+scale = Vector2(2.48438, 2.5625)
+texture_normal = ExtResource("4_7jktm")
+action = "ui_accept"
+
+[node name="Control" type="Control" parent="CharacterBody3D/Camera3D"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="CharacterBody3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 1326.0
+offset_top = 22.0
+offset_right = 1994.0
+offset_bottom = 313.0
+
+[node name="Label" type="Label" parent="CharacterBody3D/Camera3D/Control/Panel"]
+layout_mode = 0
+offset_left = 178.0
+offset_top = 12.0
+offset_right = 487.0
+offset_bottom = 130.0
+text = "Player1"
+label_settings = SubResource("LabelSettings_eow3j")
+
+[node name="Panel2" type="Panel" parent="CharacterBody3D/Camera3D/Control"]
+layout_mode = 0
+offset_left = 1324.0
+offset_top = 325.0
+offset_right = 1998.0
+offset_bottom = 403.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CharacterBody3D"]
+libraries = {
+&"": SubResource("AnimationLibrary_7jktm")
+}
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(4.04517, 0, 0, 0, 0.0931857, 0, 0, 0, 6.20501, 0.225404, -0.205025, 0.0508375)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("BoxShape3D_80nbo")
